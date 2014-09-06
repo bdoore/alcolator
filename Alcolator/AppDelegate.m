@@ -7,12 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "BLCWhiskeyViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     // Override point for customization after application launch.
+    ViewController *viewController = [[BLCWhiskeyViewController alloc] init];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

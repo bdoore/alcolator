@@ -13,8 +13,6 @@
 		B7691B2B19B96FE900C0EB26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7691B2919B96FE900C0EB26 /* InfoPlist.strings */; };
 		B7691B2D19B96FE900C0EB26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7691B2C19B96FE900C0EB26 /* main.m */; };
 		B7691B3119B96FE900C0EB26 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7691B3019B96FE900C0EB26 /* AppDelegate.m */; };
-		B7691B3419B96FE900C0EB26 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7691B3219B96FE900C0EB26 /* Main_iPhone.storyboard */; };
-		B7691B3719B96FE900C0EB26 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7691B3519B96FE900C0EB26 /* Main_iPad.storyboard */; };
 		B7691B3A19B96FE900C0EB26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7691B3919B96FE900C0EB26 /* ViewController.m */; };
 		B7691B3C19B96FE900C0EB26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7691B3B19B96FE900C0EB26 /* Images.xcassets */; };
 		B7691B4319B96FE900C0EB26 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7691B4219B96FE900C0EB26 /* XCTest.framework */; };
@@ -22,6 +20,7 @@
 		B7691B4519B96FE900C0EB26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7691B2419B96FE900C0EB26 /* UIKit.framework */; };
 		B7691B4D19B96FE900C0EB26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7691B4B19B96FE900C0EB26 /* InfoPlist.strings */; };
 		B7691B4F19B96FE900C0EB26 /* AlcolatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7691B4E19B96FE900C0EB26 /* AlcolatorTests.m */; };
+		B7691B6019BA1C2400C0EB26 /* BLCWhiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7691B5F19BA1C2400C0EB26 /* BLCWhiskeyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +44,6 @@
 		B7691B2E19B96FE900C0EB26 /* Alcolator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Alcolator-Prefix.pch"; sourceTree = "<group>"; };
 		B7691B2F19B96FE900C0EB26 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B7691B3019B96FE900C0EB26 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B7691B3319B96FE900C0EB26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B7691B3619B96FE900C0EB26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B7691B3819B96FE900C0EB26 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B7691B3919B96FE900C0EB26 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B7691B3B19B96FE900C0EB26 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -55,6 +52,8 @@
 		B7691B4A19B96FE900C0EB26 /* AlcolatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlcolatorTests-Info.plist"; sourceTree = "<group>"; };
 		B7691B4C19B96FE900C0EB26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B7691B4E19B96FE900C0EB26 /* AlcolatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlcolatorTests.m; sourceTree = "<group>"; };
+		B7691B5E19BA1C2400C0EB26 /* BLCWhiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCWhiskeyViewController.h; sourceTree = "<group>"; };
+		B7691B5F19BA1C2400C0EB26 /* BLCWhiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCWhiskeyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +113,10 @@
 		B7691B2619B96FE900C0EB26 /* Alcolator */ = {
 			isa = PBXGroup;
 			children = (
+				B7691B5E19BA1C2400C0EB26 /* BLCWhiskeyViewController.h */,
+				B7691B5F19BA1C2400C0EB26 /* BLCWhiskeyViewController.m */,
 				B7691B2F19B96FE900C0EB26 /* AppDelegate.h */,
 				B7691B3019B96FE900C0EB26 /* AppDelegate.m */,
-				B7691B3219B96FE900C0EB26 /* Main_iPhone.storyboard */,
-				B7691B3519B96FE900C0EB26 /* Main_iPad.storyboard */,
 				B7691B3819B96FE900C0EB26 /* ViewController.h */,
 				B7691B3919B96FE900C0EB26 /* ViewController.m */,
 				B7691B3B19B96FE900C0EB26 /* Images.xcassets */,
@@ -231,9 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7691B3719B96FE900C0EB26 /* Main_iPad.storyboard in Resources */,
 				B7691B3C19B96FE900C0EB26 /* Images.xcassets in Resources */,
-				B7691B3419B96FE900C0EB26 /* Main_iPhone.storyboard in Resources */,
 				B7691B2B19B96FE900C0EB26 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7691B3A19B96FE900C0EB26 /* ViewController.m in Sources */,
+				B7691B6019BA1C2400C0EB26 /* BLCWhiskeyViewController.m in Sources */,
 				B7691B3119B96FE900C0EB26 /* AppDelegate.m in Sources */,
 				B7691B2D19B96FE900C0EB26 /* main.m in Sources */,
 			);
@@ -284,22 +282,6 @@
 				B7691B2A19B96FE900C0EB26 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B7691B3219B96FE900C0EB26 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7691B3319B96FE900C0EB26 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		B7691B3519B96FE900C0EB26 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7691B3619B96FE900C0EB26 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		B7691B4B19B96FE900C0EB26 /* InfoPlist.strings */ = {
@@ -470,6 +452,7 @@
 				B7691B5419B96FE900C0EB26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7691B5519B96FE900C0EB26 /* Build configuration list for PBXNativeTarget "AlcolatorTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +461,7 @@
 				B7691B5719B96FE900C0EB26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
