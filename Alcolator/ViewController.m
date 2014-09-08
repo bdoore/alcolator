@@ -54,15 +54,18 @@
     
     [super viewWillLayoutSubviews];
     
+    
     CGRect screenBounds = self.view.bounds;
     
     CGFloat viewWidth = screenBounds.size.width;
     CGFloat viewHeight = screenBounds.size.height;
     CGFloat padding = 20;
+    //CGFloat navBarHeight = 44;
+    //CGFloat navBarLandscape = 34;
     CGFloat itemWidth = viewWidth - padding - padding;
     CGFloat itemHeight = 44;
     
-    self.beerPercentTextField.frame = CGRectMake(padding, padding+50, itemWidth, itemHeight);
+    self.beerPercentTextField.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
     
     CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
     self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
@@ -76,13 +79,29 @@
     CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
     self.resultLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight * 2);
     
-    CGFloat buttonPosition = viewHeight - itemHeight - padding;
+    CGFloat buttonPosition = viewHeight - (itemHeight*2) - padding;
     self.calculateButton.frame = CGRectMake(padding, buttonPosition, itemWidth, itemHeight);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     
+    
+}
+
+
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        
+        self.title = NSLocalizedString(@"Wine", @"wine");
+        
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    
+    
+    return self;
 }
 
 
@@ -91,8 +110,6 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    self.title = NSLocalizedString(@"Wine", @"wine");
     
     self.view.backgroundColor = [UIColor colorWithRed:(.9) green:(1) blue:(1) alpha:(.9)];
     
@@ -152,8 +169,10 @@
     else
         self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beers", numberOfBeers];
     
-    self.title = [NSString stringWithFormat:@"Wine (%i beers)", numberOfBeers];
+    //self.title = [NSString stringWithFormat:@"Wine (%i beers)", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
+
 }
 
 

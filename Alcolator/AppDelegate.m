@@ -9,7 +9,13 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "BLCWhiskeyViewController.h"
-#import "BLCMainMenuViewController.h"
+//#import "BLCMainMenuViewController.h"
+
+@interface AppDelegate () <UITabBarControllerDelegate>
+
+//theBarVC.delegate = self;
+
+@end
 
 @implementation AppDelegate
 
@@ -26,16 +32,28 @@
     //BLCMainMenuViewController *viewController = [[BLCMainMenuViewController alloc] init];
     //self.window.rootViewController = viewController;
     
-    BLCMainMenuViewController *mainMenuViewController = [[BLCMainMenuViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
-    self.window.rootViewController = navigationController;
+    ViewController *wineVC = [[ViewController alloc] init];
+    BLCWhiskeyViewController *whiskeyVC = [[BLCWhiskeyViewController alloc] init];
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+    tabBarVC.delegate = self;
+    
+    self.window.rootViewController = tabBarVC;
     
     [self.window makeKeyAndVisible];
     
     
     return YES;
 }
-							
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    NSString *currentTab;
+    currentTab = tabBarController.selectedViewController.title;
+    //NSString output = [NSString stringWithFormat:@"New view controller selected: %@",currentTab];
+    NSLog(@"New view controller selected: %@",currentTab);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

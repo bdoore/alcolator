@@ -43,7 +43,7 @@
     
     CGFloat viewWidth = screenBounds.size.width;
     CGFloat viewHeight = screenBounds.size.height;
-    CGFloat padding = 20;
+    //CGFloat padding = 20;
     CGFloat itemWidth = (viewWidth)/2;
     CGFloat yMidpoint = (viewHeight)/2;
     CGFloat itemHeight = 44;
@@ -59,7 +59,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.view.backgroundColor = [UIColor colorWithRed:(.9) green:(1) blue:(1) alpha:(.9)];
+    self.view.backgroundColor = [UIColor colorWithRed:(.9) green:(.9) blue:(1) alpha:(.9)];
     
     [self.wineButton addTarget:self action:@selector(winePressed:) forControlEvents:UIControlEventTouchUpInside];
     

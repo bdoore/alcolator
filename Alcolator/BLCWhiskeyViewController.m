@@ -15,6 +15,18 @@
 
 @implementation BLCWhiskeyViewController
 
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        
+        self.title = NSLocalizedString(@"Whiskey", nil);
+        
+         [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    return self;
+}
+
 - (void)buttonPressed:(UIButton *)sender;
 {
     [self.beerPercentTextField resignFirstResponder];
@@ -52,25 +64,31 @@
     self.resultLabel.text = resultText;
 }
 
-- (void)sliderValueDidChange:(UISlider *)sender {
+/*- (void)sliderValueDidChange:(UISlider *)sender {
     
     int numberOfBeers = sender.value;
     NSLog(@"Slider value changed to %i", numberOfBeers);
+    
     if (numberOfBeers == 1)
         self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beer", numberOfBeers];
     else
         self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beers", numberOfBeers];
     
-    self.title = [NSString stringWithFormat:@"Whiskey (%i beers)", numberOfBeers];
+    //self.title = [NSString stringWithFormat:@"Whiskey (%i beers)", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
-}
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
+
+}*/
 
 
 - (void) viewDidLoad
 {
     
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+    
+    self.view.backgroundColor = [UIColor colorWithRed:(1) green:(1) blue:(.9) alpha:(.9)];
+
+    //self.title = NSLocalizedString(@"Whiskey", @"whiskey");
 }
 
 @end
