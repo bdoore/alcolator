@@ -57,11 +57,12 @@
     CGRect screenBounds = self.view.bounds;
     
     CGFloat viewWidth = screenBounds.size.width;
+    CGFloat viewHeight = screenBounds.size.height;
     CGFloat padding = 20;
     CGFloat itemWidth = viewWidth - padding - padding;
     CGFloat itemHeight = 44;
     
-    self.beerPercentTextField.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
+    self.beerPercentTextField.frame = CGRectMake(padding, padding+50, itemWidth, itemHeight);
     
     CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
     self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
@@ -75,8 +76,8 @@
     CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
     self.resultLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight * 2);
     
-    CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-    self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
+    CGFloat buttonPosition = viewHeight - itemHeight - padding;
+    self.calculateButton.frame = CGRectMake(padding, buttonPosition, itemWidth, itemHeight);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -88,7 +89,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = NSLocalizedString(@"Wine", @"wine");
     
     self.view.backgroundColor = [UIColor colorWithRed:(.9) green:(1) blue:(1) alpha:(.9)];
     
@@ -142,11 +146,13 @@
 - (void)sliderValueDidChange:(UISlider *)sender {
 
     int numberOfBeers = sender.value;
-    NSLog(@"Slider value changed to %f", sender.value);
+    NSLog(@"Slider value changed to %i", numberOfBeers);
     if (numberOfBeers == 1)
         self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beer", numberOfBeers];
     else
         self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beers", numberOfBeers];
+    
+    self.title = [NSString stringWithFormat:@"Wine (%i beers)", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
 }
 

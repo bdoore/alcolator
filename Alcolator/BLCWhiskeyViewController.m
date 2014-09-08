@@ -10,6 +10,7 @@
 
 @interface BLCWhiskeyViewController ()
 
+
 @end
 
 @implementation BLCWhiskeyViewController
@@ -50,4 +51,26 @@
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
 }
+
+- (void)sliderValueDidChange:(UISlider *)sender {
+    
+    int numberOfBeers = sender.value;
+    NSLog(@"Slider value changed to %i", numberOfBeers);
+    if (numberOfBeers == 1)
+        self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beer", numberOfBeers];
+    else
+        self.beerCountLabel.text = [NSString stringWithFormat:@"%d Beers", numberOfBeers];
+    
+    self.title = [NSString stringWithFormat:@"Whiskey (%i beers)", numberOfBeers];
+    [self.beerPercentTextField resignFirstResponder];
+}
+
+
+- (void) viewDidLoad
+{
+    
+    [super viewDidLoad];
+    self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+}
+
 @end
